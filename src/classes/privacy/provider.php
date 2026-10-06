@@ -1,5 +1,5 @@
 <?php
-namespace local_tuplugin\privacy; 
+namespace local_chuspasocial\privacy; 
 
 use core_privacy\local\metadata\collection;
 use core_privacy\local\metadata\provider as metadata_provider;
