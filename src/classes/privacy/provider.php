@@ -1,5 +1,5 @@
 <?php
-namespace local_tuplugin\privacy; 
+namespace local_ChuspaSocial\privacy; 
 
 use core_privacy\local\metadata\collection;
 
