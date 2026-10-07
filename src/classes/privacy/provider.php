@@ -110,8 +110,6 @@ class provider implements metadata_provider, plugin_provider {
             }
         }
     }
-
-    // 4. Métodos obligatorios de la interfaz (deben estar presentes, aunque el issue se centre en exportar)
     public static function delete_data_for_all_users_in_context(\context $context) {
         // Implementación de borrado (puede ir vacío o con lógica básica por ahora)
     }
