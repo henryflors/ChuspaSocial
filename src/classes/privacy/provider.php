@@ -71,9 +71,7 @@ class provider implements metadata_provider, plugin_provider {
         if (empty($contextlist->count())) {
             return;
         }
-
         $userid = $contextlist->get_user()->id;
-
         foreach ($contextlist->get_contexts() as $context) {
             
             
@@ -91,8 +89,6 @@ class provider implements metadata_provider, plugin_provider {
                     (object)['posts' => $data_posts]
                 );
             }
-
-            
             $comments = $DB->get_records('local_chuspasocial_comments', ['userid' => $userid]);
             if (!empty($comments)) {
                 writer::with_context($context)->export_data(
@@ -100,8 +96,6 @@ class provider implements metadata_provider, plugin_provider {
                     (object)['comments' => $comments]
                 );
             }
-
-            
             $reactions = $DB->get_records('local_chuspasocial_reactions', ['userid' => $userid]);
             if (!empty($reactions)) {
                 writer::with_context($context)->export_data(
@@ -109,8 +103,6 @@ class provider implements metadata_provider, plugin_provider {
                     (object)['reactions' => $reactions]
                 );
             }
-
-            
             $follows = $DB->get_records('local_chuspasocial_follows', ['userid' => $userid]);
             if (!empty($follows)) {
                 writer::with_context($context)->export_data(
@@ -118,8 +110,6 @@ class provider implements metadata_provider, plugin_provider {
                     (object)['follows' => $follows]
                 );
             }
-
-            
             $announcements = $DB->get_records('local_chuspasocial_announcements', ['userid' => $userid]);
             if (!empty($announcements)) {
                 writer::with_context($context)->export_data(
@@ -129,12 +119,8 @@ class provider implements metadata_provider, plugin_provider {
             }
         }
     }
-
-    public static function delete_data_for_all_users_in_context(\context $context) {
-        
+    public static function delete_data_for_all_users_in_context(\context $context) {   
     }
-
     public static function delete_data_for_user(approved_contextlist $contextlist) {
-    
     }
 }
